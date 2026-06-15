@@ -50,7 +50,6 @@ export default function ProductDetailsPage() {
     );
   }
 
-  
   const displayTitle = product.name || product.title || "Untitled Product";
   const displayDescription = product.description || product.longDesc || product.shortDesc || "Loomed from premium materials.";
   const displayCategory = product.category || "Accessories";
@@ -76,8 +75,7 @@ export default function ProductDetailsPage() {
           {/* Left Column: Visual Image Asset Container Frame */}
           <div className="md:col-span-6 relative w-full">
             <div className="w-full aspect-[4/3] sm:aspect-[16/11] bg-stone-100 rounded-3xl overflow-hidden border border-stone-200/80 flex items-center justify-center text-5xl text-stone-300 select-none shadow-xs relative">
-              {cleanImageURL && cleanImageURL !== <FaBox />
- && !imageError ? (
+              {cleanImageURL && cleanImageURL !== "" && !imageError ? (
                 <img
                   src={cleanImageURL}
                   alt={displayTitle}
@@ -85,8 +83,7 @@ export default function ProductDetailsPage() {
                   onError={() => setImageError(true)}
                 />
               ) : (
-                <span className="opacity-30">{product.fallbackEmoji || <FaBox />
-}</span>
+                <span className="opacity-30 text-4xl">{product.fallbackEmoji || <FaBox />}</span>
               )}
             </div>
           </div>
@@ -171,24 +168,22 @@ export default function ProductDetailsPage() {
                   className="flex flex-col group cursor-pointer text-left"
                 >
                   <div className="w-full aspect-[4/3] bg-stone-100 rounded-2xl overflow-hidden border border-stone-200/80 relative flex items-center justify-center text-2xl text-stone-300 select-none transition-shadow group-hover:shadow-md">
-                    {cleanItemImg && cleanItemImg !== "📦" ? (
+                    {cleanItemImg && cleanItemImg !== "" ? (
                       <img
                         src={cleanItemImg}
                         alt={itemTitle}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                         onError={(e) => {
                           e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "block";
+                          if (e.target.nextSibling) e.target.nextSibling.style.display = "block";
                         }}
                       />
                     ) : null}
                     <span 
                       className="opacity-40"
-                      style={{ display: cleanItemImg && cleanItemImg !== <FaBox />
- ? "none" : "block" }}
+                      style={{ display: cleanItemImg && cleanItemImg !== "" ? "none" : "block" }}
                     >
-                      {item.fallbackEmoji || <FaBox />
-}
+                      {item.fallbackEmoji || <FaBox />}
                     </span>
                   </div>
                   <div className="mt-3 px-1">
