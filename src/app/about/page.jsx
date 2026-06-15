@@ -38,7 +38,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-[#fcfbf9] text-stone-800 font-sans min-h-screen overflow-x-hidden">
       
-      {/* 1. HERO STORY TITLE SECTION */}
+      
       <section className="w-full bg-[#f5eae4] pt-24 pb-16 px-6 sm:px-9 text-center">
         <motion.div 
           initial="hidden"
@@ -74,7 +74,7 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* 2. LARGE LIFESTYLE IMAGE BANNER */}
+      {/*  LARGE LIFESTYLE IMAGE BANNER */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-20">
         <motion.div 
           initial="hidden"
@@ -96,7 +96,7 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* 3. CORE VALUES / PHILOSOPHY GRID */}
+      {/*  CORE VALUES / PHILOSOPHY GRID */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <motion.div 
           initial="hidden"
