@@ -51,3 +51,6 @@ npm run dev
 /items/[id]	- Dynamic	Product Details Page: Contextual page rendering deep specifications, price modules, and related items.
 /login	Auth -	Welcome Back Page: Secure gateway supporting email credentials and Google Sign-In.
 /register	Auth -	Registration Page: Creates accounts and binds user state to the application framework.
+
+
+***Live Deployment link: https://maison24-taupe.vercel.app/
